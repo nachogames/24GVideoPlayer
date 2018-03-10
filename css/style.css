@@ -1,0 +1,243 @@
+/* Fonts That I am using */
+/* ----------------------------------------------------- */
+@font-face {
+    font-family: 'BRANDON';
+    src: url('../fonts/BRANDON_LIGHT.otf');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BRANDON';
+    src: url('../fonts/BRANDON_REG.otf');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BRANDON';
+    src: url('../fonts/BRANDON_MED.otf');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BRANDON';
+    src: url('../fonts/BRANDON_BLD.otf');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'BRANDON';
+    src: url('../fonts/BRANDON_BLK.otf');
+    font-weight: 1000;
+    font-style: normal;
+}
+/* End of Fonts */
+/* ----------------------------------------------------- */
+
+
+*{
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
+}
+html{
+    overflow-x: hidden;
+}
+body {
+    font-family: 'BRANDON';
+    font-weight: 700;
+    color: #333c3e;
+    max-width: 2650px;
+    margin: 0 auto;
+ 
+}
+
+.nav{
+    padding-left: 35px;
+}
+
+#welcome-bar{
+    background-color: #009ddb;
+    color: #fff;
+    height: 30px;
+    font-size: 20px;
+}
+
+#welcome-bar #welcome{
+    font-weight: 200;
+}
+
+#title-bar{ 
+    position: relative;
+    background-color: #333c3e;
+    color: #fff;
+    height: 100px;
+}
+
+#title-bar #logo{
+    width: 90px;
+    left: 35px;
+    margin-top: -30%;
+}
+
+.logo-title{
+    position: absolute;
+    top: 50%;
+}
+
+#logo-title-text{
+    font-size: 21px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-top: -1.5%;
+    left: 155px;
+}
+
+#wrapper{
+    margin: 0px 35px;
+}
+
+
+
+#video-title{
+    margin-top: 60px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+#main-video{
+    width: 75%;
+    float: left;
+    margin-right: 25px;
+}
+
+#other-videos{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 25px;
+}
+
+#other-videos .thumbnails{
+    width: 98%;
+    float: right;
+}
+
+@media screen and (min-width: 2650px){
+
+    .nav{
+        padding-left: 5px;
+    }
+
+    #wrapper{
+        margin: 0;
+    }
+
+    #logo-title-text{
+        margin-top: -1%;
+        left: 120px;
+    }
+
+    #title-bar #logo{
+        left: 0;
+    }
+
+    #other-videos .thumbnails{
+        width: 98.99%;
+    }
+}
+
+#video-stats{
+    padding: 15px 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ebebeb;
+    width: 75%;
+}
+
+#thumbs-up-vote{
+    margin-right: 25px;
+}
+
+.thumbs{
+    padding-right: 3px;
+}
+
+.vote{
+    color: #faa61a;
+    float: right;
+}
+
+
+#comments{
+    width: 75%;
+   
+}
+
+#comments > p{
+    margin: 15px 0;
+}
+
+
+#comment-box{
+    font-family: 'BRANDON';
+    color: #333c3e;
+    border: 1px solid #ebebeb;
+    font-size: 17px;
+    font-weight: 200;
+    width: 100%;
+    height: 60px;
+    padding-left: 15px;
+    padding-top: 10px;
+    resize: none;
+}
+
+#comment-box::placeholder{  
+    color: #d1d1d1;
+}
+
+#add-comment{
+    color: #fff;
+    text-align: center;
+    font-weight: 200;
+    font-size: 18px;
+    background-color: #faa61a;
+    width: 180px;
+    height: 40px;
+    padding-top: 10px;
+}
+
+.comment-card{
+    margin: 15px 0;
+}
+
+.comment-card-left{
+    float: left;
+    width: 70px;
+}
+
+.comment-card-right{
+    float: left;
+    width: calc(100% - 75px);
+}
+
+#clear{
+    clear: both;
+}
+
+.timestamp{
+    font-weight: 200;
+    margin-left: 10px;
+}
+
+.comment{
+    font-weight: 300;
+}
+
+.avatar{
+    width: 60px;
+}
+
+
+footer img{
+    width: 175px;
+    margin: auto 45%;
+}

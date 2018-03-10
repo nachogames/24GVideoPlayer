@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>24G Video Player</title>
+</head>
+<body>
+    <header>
+        <div id="welcome-bar" class="nav">
+            <span id="welcome">Welcome,</span>
+            <span>Neil</span>
+        </div>
+        <div id="title-bar" class="nav">
+            <span class="logo-title"><img src="svg/24g_logo.svg" alt="24G Logo" id="logo"></span>
+            <span class="logo-title" id="logo-title-text">VIDEO PLAYER</span>
+        </div>
+    </header>
+    <div id="wrapper">
+        <div id="video-content">
+            <p id="video-title">Video Title</p>
+            <video id="main-video" controls controlsList="nodownload">
+                <source src="https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/who_is_24g.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+
+            <div id="other-videos">
+                <img id="video1" class="thumbnails" src="https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/who_is_24g.jpg" alt="CES Overview">
+
+                <img id="video2" class="thumbnails" src="https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/who_is_24g.jpg" alt="Who is 24G">
+
+                <img id="video3" class="thumbnails" src="https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/who_is_24g.jpg" alt="Future of Drones">
+            </div>
+        </div>
+
+        <div id="video-stats">
+            <span>0 views</span>
+            <span class="vote" > <img src="svg/thumbs_down.svg" alt="thumbs down" class="thumbs">4</span>
+            <span class="vote" id="thumbs-up-vote"> <img src="svg/thumbs_up.svg" alt="thumbs up" class="thumbs">35</span>
+        </div>
+
+        <div id="comments">
+            <p>Comments</p>          
+            <textarea id="comment-box" placeholder="Type up a sweet comment..."></textarea>
+            <div id="add-comment">
+                <p>add comment</p>
+            </div>
+            <div class="comment-card">
+                    <div class="comment-card-left">
+                        <img src="png/placeholder_avatar.png" alt="" class="avatar">
+                    </div>
+                    <div class="comment-card-right">
+                        <span class="person">Neil McEachin</span>
+                        <span class="timestamp">2 minutes ago</span>
+                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quasi similique eius velit provident quaerat.</p>
+                    </div>
+                    <div id="clear"></div>
+                </div>
+
+            <div class="comment-card">
+                    <div class="comment-card-left">
+                        <img src="png/placeholder_avatar.png" alt="" class="avatar">
+                    </div>
+                    <div class="comment-card-right">
+                        <span class="person">Neil McEachin</span>
+                        <span class="timestamp"> 2 minutes ago</span>
+                        <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel assumenda animi voluptatibus, quasi aut ab explicabo ipsum quis ex ut exercitationem cupiditate recusandae minus natus quas magnam blanditiis cum. Veritatis accusantium quasi dolore ea non voluptatem optio? Consequatur dolorem similique rem eum ipsam veritatis beatae harum aperiam, officia asperiores? Nemo, quasi? Tempora optio quae assumenda expedita quis totam nesciunt voluptas cumque sit architecto quas doloribus necessitatibus sapiente facere quasi temporibus, blanditiis delectus illo vero aperiam at deleniti fugit consequatur! Exercitationem nemo ab sint accusamus commodi, eius dolores laborum? Libero, tempore! Incidunt nam tempore fugit quidem error quibusdam. Excepturi laborum dolorum possimus commodi eveniet unde obcaecati aut omnis eaque porro beatae rerum deleniti corporis fuga, minus voluptatem officiis suscipit ratione labore modi! Molestiae repellendus soluta vitae, accusantium eligendi velit nisi ipsam. Sapiente, accusamus ullam tempora fugiat quisquam numquam dolorum saepe odit ea praesentium laboriosam tenetur aliquid similique consequatur, minus harum quod corporis voluptatem pariatur alias veritatis vel nam nesciunt? Iure, sed, nulla et voluptatum ratione tempore earum fugit culpa quaerat itaque odit ullam delectus, maxime quis! A inventore ab, atque asperiores aspernatur deleniti reprehenderit temporibus quaerat eius voluptatibus? Voluptatum magni, fuga fugiat excepturi hic cumque, iure vitae beatae, error veritatis magnam?</p>
+                    </div>
+                    <div id="clear"></div>
+                </div>
+
+            <div class="comment-card">
+                <div class="comment-card-left">
+                    <img src="png/placeholder_avatar.png" alt="" class="avatar">
+                </div>
+                <div class="comment-card-right">
+                    <span class="person">Neil McEachin</span>
+                    <span class="timestamp"> 2 minutes ago</span>
+                    <p class="comment">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur, quasi similique eius velit provident quaerat.</p>
+                </div>
+                <div id="clear"></div>
+            </div>
+        </div>
+    </div>
+    <footer><img src="svg/powered_by_24g.svg" alt="powered by 24g"></footer>
+</body>
+</html>

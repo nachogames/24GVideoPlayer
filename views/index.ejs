@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
     <title>24G Video Player</title>
-    <!-- <script src="js/videoInfo.js"></script> -->
 </head>
 <body>
     <header>
@@ -21,7 +20,9 @@
     </header>
     <div id="wrapper">
         <div id="video-content">
-            <p id="video-title">Video Title</p>
+            <p id="video-title">
+                Title
+            </p>                 
             <video id="main-video" src=https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/who_is_24g.mp4 type="video/mp4" controls controlsList="nodownload">
                 <!-- <source id="main-vid" src=https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/who_is_24g.mp4 type="video/mp4" >
                 Your browser does not support the video tag. -->
@@ -48,26 +49,31 @@
         </div>
 
         <div id="comments">
-            <p>Comments</p>          
-            <textarea id="comment-box" placeholder="Type up a sweet comment..."></textarea>
-            <div id="add-comment">
-                <p>add comment</p>
-            </div>
+            <p>Comments</p>  
+            <textarea id="comment-box" placeholder="Type up a sweet comment..." name="commentTyped" form="comForm"></textarea>        
+            <form id="comForm" action="/addComment" method="POST">       
+                
+                <div id="add-comment" > 
+                    <input type="submit" value="Submit">
+                </div>
+            </form>  
 
+            <% comData.forEach(function (user) { %>
             <div class="comment-card">
                 <div class="comment-card-left">
                     <img src="png/placeholder_avatar.png" alt="" class="avatar">
                 </div>
                 <div class="comment-card-right">
-                    <span class="person"></span>
+                    <span class="person"><%=user.firstName%></span>
                     <span class="timestamp"></span>
-                    <p class="comment"></p>
+                    <p class="comment"><%=user.comment %></p>
                 </div>
                 <div id="clear"></div>
             </div>
+            <% }) %>
+
         </div>
     </div>
     <footer><img src="svg/powered_by_24g.svg" alt="powered by 24g"></footer>
-    <!-- <script src="videoInfo.js"></script> -->
 </body>
 </html>

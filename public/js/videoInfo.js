@@ -9,15 +9,10 @@
 //         document.getElementById("views").innerHTML = result[0].views;
 //     })
 
-function start(){
-    app.db.query("SELECT * FROM videos",(err,result, fields) => {
-        if(err){
-            throw err;
-        }
-        console.log(result);
-    });
-    document.getElementById("thumbs-up").innerHTML = "0 ";
-    document.getElementById("thumbs-down").innerHTML = "0 ";
+module.exports.start1 = function(){
+    
+    window.document.getElementById("thumbs-up").innerHTML = "0 ";
+    window.document.getElementById("thumbs-down").innerHTML = "0 ";
 }
 
 function loadVideo(video){
@@ -37,3 +32,4 @@ function loadVideo(video){
     }
     
 }
+

@@ -44,10 +44,11 @@ html{
 }
 body {
     font-family: 'BRANDON';
-    font-weight: 700;
+    font-weight: 400;
     color: #333c3e;
     max-width: 2650px;
     margin: 0 auto;
+    overflow: hidden;
  
 }
 
@@ -58,8 +59,12 @@ body {
 #welcome-bar{
     background-color: #009ddb;
     color: #fff;
-    height: 30px;
-    font-size: 20px;
+    height: 40px;
+    font-size: 1.2em;
+}
+
+#greeting{
+    padding-top: 5px;
 }
 
 #welcome-bar #welcome{
@@ -85,10 +90,10 @@ body {
 }
 
 #logo-title-text{
-    font-size: 21px;
+    font-size: 1.5em;
     font-weight: 400;
     letter-spacing: 2px;
-    margin-top: -1.5%;
+    margin-top: -20px;
     left: 155px;
 }
 
@@ -97,30 +102,102 @@ body {
 }
 
 
+#video-content{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto;
 
+
+}
 #video-title{
     margin-top: 60px;
     margin-bottom: 15px;
-    font-size: 24px;
+    font-size: 1.7em;
     font-weight: 700;
 }
 
+#main-vid{
+    margin-bottom: 4px;
+}
+
 #main-video{
-    width: 75%;
-    float: left;
-    margin-right: 25px;
+    width: 100%;
+    grid-column: 1 / 2;
+    margin-bottom: -7.5px; 
+}
+
+#main-video:hover{
+    cursor: pointer;
 }
 
 #other-videos{
+    grid-column: 2 / 3;
     display: grid;
     grid-template-rows: repeat(3, 1fr);
-    grid-gap: 25px;
+    
 }
 
-#other-videos .thumbnails{
-    width: 98%;
-    float: right;
+#video1{
+    grid-row: 1 / 2;
 }
+
+#video2{
+    grid-row: 2 / 3;
+    align-self: center;
+}
+
+#video3{
+    grid-row: 3 / 4;
+    align-self: flex-end;
+}
+
+.videos{
+    width: 92%;
+    justify-self: end;
+    outline: 6px #faa61a;
+    outline-style: none;
+    outline-offset: -6.5px;
+}
+
+.thumbnails:hover{
+    cursor: pointer;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    /* IE10+ CSS styles go here */
+    
+    #main-vid{
+        width: 75%;
+        float: left; 
+    }
+
+    #main-video{
+        width: 100%;
+    }
+
+    #other-videos{
+        float: right;
+        width: 23%; 
+    } 
+
+    #other-videos .thumbnails{
+        width: 98%;
+        justify-self: end;
+    }
+
+    #video2{
+        margin: 7% 0;
+    }
+
+    
+    #video-content #video-stats{
+        width: 75%;
+    }
+
+}
+
+
 
 @media screen and (min-width: 2650px){
 
@@ -133,7 +210,6 @@ body {
     }
 
     #logo-title-text{
-        margin-top: -1%;
         left: 120px;
     }
 
@@ -141,8 +217,16 @@ body {
         left: 0;
     }
 
+    #main-video{
+        margin-right: 40px;
+    }
+
+    #other-videos{
+        grid-gap: 40px;
+    }
+
     #other-videos .thumbnails{
-        width: 98.99%;
+        /* width: 99%; */
     }
 }
 
@@ -150,20 +234,49 @@ body {
     padding: 15px 0;
     margin-bottom: 15px;
     border-bottom: 1px solid #ebebeb;
-    width: 75%;
+    width: 100%;
 }
 
+#votes{
+    display: flex;
+    width: 50%;
+    float: right;
+    justify-content: flex-end;
+}
 #thumbs-up-vote{
-    margin-right: 25px;
+}
+
+#thumbs-down-vote{
+    padding-left: 25px;
+    padding-right: 2px;
 }
 
 .thumbs{
-    padding-right: 3px;
+    fill: #FAA61A;
+    padding-right: 3px;   
+}
+
+/* #thumbsDown{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+} */
+
+/* .voteThumbs{
+    position: absolute;
+} */
+
+.thumbs:hover{
+    fill: #e58c1b;
+    cursor: pointer;
 }
 
 .vote{
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
     color: #faa61a;
-    float: right;
 }
 
 
@@ -181,7 +294,7 @@ body {
     font-family: 'BRANDON';
     color: #333c3e;
     border: 1px solid #ebebeb;
-    font-size: 17px;
+    font-size: 1.1em;
     font-weight: 200;
     width: 100%;
     height: 60px;
@@ -198,11 +311,18 @@ body {
     color: #fff;
     text-align: center;
     font-weight: 200;
-    font-size: 18px;
+    font-size: 1.15em;
     background-color: #faa61a;
     width: 180px;
     height: 40px;
-    padding-top: 10px;
+    padding-top: 7px;
+    margin: 15px 0;
+    letter-spacing: .1em;
+}
+
+#add-comment:hover{
+    cursor: pointer;
+    background-color: #e58c1b;
 }
 
 .comment-card{
@@ -219,7 +339,7 @@ body {
     width: calc(100% - 75px);
 }
 
-.clear{
+#clear{
     clear: both;
 }
 
@@ -237,7 +357,249 @@ body {
 }
 
 
+footer{
+    padding-bottom: 30px;
+}
 footer img{
+    
     width: 175px;
-    margin: auto 45%;
+    display: block;
+    margin: auto;
+}
+
+
+
+
+
+
+/* Mobile Media Query */
+@media screen and (max-width: 412px){
+    .nav{
+        padding-left: 0
+    }
+    
+    #welcome-bar{
+        height: 80px;
+    }
+    
+    #greeting{
+        padding-left: 35px;
+        padding-top: 25px;
+    }
+      
+    #title-bar{ 
+        position: unset;
+        height: 175px;     
+    }
+    
+    #title-bar #logo{
+        padding-top: 40px;
+        padding-bottom: 5px;
+        display: block;
+        margin: auto;
+    }
+    
+    .logo-title{
+        position: unset;
+        top: 0;
+    }
+    
+    #logo-title-text{
+        display: block;
+        text-align: center;
+        font-size: 1.5em;
+        font-weight: 400;
+        letter-spacing: 2px;
+        margin-top: 0;
+        left: 0;
+    }
+    
+    #wrapper{
+        margin: 0px 20px;
+    }
+    
+    
+    #video-content{
+        width: 100%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -moz-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        /* optional */
+        -webkit-box-align: start;
+        -moz-box-align: start;
+        -ms-flex-align: start;
+        -webkit-align-items: flex-start;
+        align-items: flex-start;
+    }
+    #video-title{
+        margin-top: 40px;
+        margin-bottom: 10px;
+        font-size: 1.3em;
+        font-weight: 700;
+    }
+    
+    #main-vid{
+        margin-bottom: 4px;
+    }
+    
+    #main-video{
+        width: 100%;
+        margin-bottom: -7.5px; 
+    }
+    
+    #other-videos{
+        -webkit-box-ordinal-group: 2;
+        -moz-box-ordinal-group: 2;
+        -ms-flex-order: 2;
+        -webkit-order: 2;
+        order: 2;
+        display: grid;  
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+    }
+    
+    #video1{
+        grid-column: 1 / 2;
+        grid-row: 1/1;
+    }
+    
+    #video2{
+        grid-column: 2 / 3;
+        grid-row: 1/1;
+    }
+    
+    #video3{
+        grid-column: 3 / 4;
+        grid-row: 1/1;
+        align-self: center;
+    }
+    
+    .videos{
+        width: 89%;
+        justify-self: center;
+        align-self: center;
+        outline: 3px #faa61a;
+        outline-style: none;
+        outline-offset: -3.5px;
+    }
+
+    
+    .thumbnails:hover{
+        cursor: pointer;
+    }
+    
+    #video-stats{
+        -webkit-box-ordinal-group: 1;
+        -moz-box-ordinal-group: 1;
+        -ms-flex-order: 1;
+        -webkit-order: 1;
+        order: 1;
+        bottom: 6px;
+        padding: 10px 0;
+        margin-bottom: 15px;
+        
+    }
+    
+    #thumbs-down-vote{
+        padding-left: 10px;
+    }
+    
+    .thumbs{
+        fill: #FAA61A;
+        padding-right: 3px;
+    }
+    
+    .thumbs:hover{
+        fill: #e58c1b;
+        cursor: pointer;
+    }
+    
+    .vote{
+        color: #faa61a;
+        float: right;
+    }
+    
+    
+    #comments{
+        width: 100%;
+       
+    }
+    
+    #comments > p{
+        margin: 15px 0;
+    }
+    
+    
+    #comment-box{
+        font-family: 'BRANDON';
+        color: #333c3e;
+        border: 1px solid #ebebeb;
+        font-size: 1.1em;
+        font-weight: 200;
+        width: 100%;
+        height: 110px;
+        padding-left: 15px;
+        padding-top: 10px;
+        resize: none;
+    }
+    
+    #comment-box::placeholder{  
+        color: #d1d1d1;
+    }
+    
+    #add-comment{
+        color: #fff;
+        text-align: center;
+        font-weight: 200;
+        font-size: 1.15em;
+        background-color: #faa61a;
+        width: 180px;
+        height: 40px;
+        padding-top: 7px;
+        margin: 15px 0;
+    }
+    
+    #add-comment:hover{
+        cursor: pointer;
+        background-color: #e58c1b;
+    }
+    
+    .comment-card{
+        margin: 15px 0;
+    }
+    
+    .comment-card-left{
+        float: left;
+        width: 70px;
+    }
+    
+    .comment-card-right{
+        float: left;
+        width: calc(100% - 75px);
+    }
+    
+    .clear{
+        clear: both;
+    }
+    
+    .timestamp{
+        font-weight: 200;
+        margin-left: 10px;
+    }
+    
+    .comment{
+        font-weight: 300;
+    }
+    
+    .avatar{
+        width: 60px;
+    }
+    
 }

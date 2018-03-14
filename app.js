@@ -13,9 +13,9 @@ const db = mysql.createConnection({
 });
 
 db.connect((err) => {
-    if(err){
+    if (err) {
         console.log(err);
-    } else{
+    } else {
         console.log('Connected to database');
     }
 });
@@ -27,9 +27,9 @@ const port = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Set View engine
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, '/views'));
 app.set('view engine', 'ejs');
-
+// res.sendFile(path.join(__dirname+'/index.html'));
 
 
 //Routes
@@ -37,76 +37,38 @@ app.set('view engine', 'ejs');
 
 //Home Route
 app.get('/', (req, res) => {
-    let vid;
-    let com;
-    db.query("SELECT * FROM comments INNER JOIN videos ON comments.video_id = videos.id WHERE videos.id = 1",(err,result, fields) => {
-        if(err){
+    res.redirect('/video1');
 
-        } else{
-            com = result;
-        }
-    });
+});
 
-    db.query("SELECT * FROM videos WHERE filename = 'https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/who_is_24g.mp4'",(err,result, fields) => {
-        if(err){
-            console.log("Result not found");
-        } else{
-            console.log(result[0].title);
-            vid = result;
-            
-        }
-    });
 
-    res.render('index',{
-        vidData: vid,
-        comData: com
+app.get('/video1', (req, res) => {
+    let query = "SELECT * FROM videos where id = 1"
+    db.query(query, (err, result, fields) => {
+        res.render('index',{
+            data: result
+        });
     });
-    
 });
 
 //Route
-app.get('/video2', (req, res) => {
-    let obj = {};
-    db.query("SELECT * FROM comments INNER JOIN videos ON comments.video_id = videos.id WHERE videos.id = 1",(err,result, fields) => {
-        if(err){
-
-        } else{
-            res.render('index',{
-                comData: result
-            });
-        }
+app.get('/video2', (req, res) => {  
+    let query = "SELECT * FROM videos where id = 2"
+    db.query(query, (err, result, fields) => {
+        res.render('index',{
+            data: result
+        });
     });
-
-    db.query("SELECT * FROM videos WHERE filename = 'https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/ces_overview.mp4'",(err,result, fields) => {
-        if(err){
-            console.log("Result not found");
-        } else{
-            console.log(result[0].title);
-            // obj= {
-            //     vidData: result
-            // };
-            
-        }
-    });
-
-    
-    
 });
 
 //Route
 app.get('/video3', (req, res) => {
-    let obj = {};
-    db.query("SELECT * FROM videos WHERE filename = 'https://static-email-hosting.s3.amazonaws.com/24G_Test_Project/videos/future_of_drones.mp4'",(err,result, fields) => {
-        if(err){
-            console.log("Result not found");
-        } else{
-            console.log(result[0].title);
-            res.render('index',{
-                data: result
-            });
-        }
+    let query = "SELECT * FROM videos where id = 3"
+    db.query(query, (err, result, fields) => {
+        res.render('index',{
+            data: result
+        });
     });
-    
 });
 
 
@@ -117,7 +79,7 @@ app.post('/addComment', (req, res) => {
     //     if(err){
     //         console.log("Result not found");
     //     } else{
-            
+
     //     }
     // });
 });
@@ -126,4 +88,3 @@ app.post('/addComment', (req, res) => {
 app.listen(port, () => {
     console.log('Server started on port ' + port);
 });
-

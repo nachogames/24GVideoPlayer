@@ -7,6 +7,8 @@ To run this app you need to have node installed on your machine. If you don't ha
 
 Once node is available, open a terminal and cd into the app folder. type in 'npm start' and a server will start up on port 3000. Then just go into the web browser and type in '127.0.0.1:3000'. After that the website is fully available to play around this.
 
+Dont forget to stop the server when done
+
 
 ### Contact
 If you have any issues or questions feel free to email me at njmceach@mtu.edu

@@ -105,7 +105,8 @@ app.post('/updateStats', jsonParser, (req, res) => {
             console.log(err);
         } 
         else{
-            
+            res.status(200);
+            res.end();
         }
     });
 });

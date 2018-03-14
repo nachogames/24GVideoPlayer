@@ -119,12 +119,28 @@ body {
 
 #main-vid{
     margin-bottom: 4px;
+    position: relative;
 }
 
 #main-video{
     width: 100%;
     grid-column: 1 / 2;
     margin-bottom: -7.5px; 
+}
+
+#controls{
+    position: absolute;
+    background-color: black;
+    opacity: .7;
+    bottom: -1px;
+    height: 30px;
+    width: 100%;
+}
+
+#play{
+    color: #faa61a;
+    float: left;
+    margin-left: 5px;
 }
 
 #main-video:hover{

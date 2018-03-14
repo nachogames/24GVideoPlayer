@@ -148,7 +148,10 @@
                     let likes = document.getElementById('thumbs-up').dataset.likes;
                     let dislikes = document.getElementById('thumbs-down').dataset.dislikes;
                     let views = document.getElementById('views').dataset.views;
-                    updateStats();
+                    window.onload = function (){
+                        updateStats();
+                    }
+                    
 
 
                     document.getElementById('main-video').addEventListener('ended',() =>{
@@ -300,16 +303,12 @@
                         let changeComments = function(comments){
                             let div = document.getElementById('commentLoad');
                             div.innerHTML = comments;
-                        }
-                        
+                        }                       
  
                     }
 
-                
-
                 });
             </script>
-            <script src="js/timeConvert.js"></script>
             <section id="commentLoad">
                 
                 <% comments.forEach((comment) => { %>

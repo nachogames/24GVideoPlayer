@@ -157,7 +157,7 @@ body {
     justify-self: end;
     outline: 6px #faa61a;
     outline-style: none;
-    outline-offset: -6.5px;
+    outline-offset: -6px;
 }
 
 .thumbnails:hover{
@@ -257,6 +257,10 @@ body {
 }
 
 /* #thumbsDown{
+    fill: #393c3e;
+} */
+
+/* #thumbsDown{
     position: absolute;
     right: 10px;
     top: 5px;
@@ -323,6 +327,10 @@ body {
 #add-comment:hover{
     cursor: pointer;
     background-color: #e58c1b;
+}
+
+#extra{
+    display: none;
 }
 
 .comment-card{

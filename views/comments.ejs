@@ -1,0 +1,14 @@
+
+<% comments.forEach((comment) => { %>
+<div id="comp" class="comment-card" data-comments='<%=comments %>'>
+    <div class="comment-card-left">
+        <img src="png/placeholder_avatar.png" alt="" class="avatar">
+    </div>
+    <div class="comment-card-right">
+        <span class="person">Neil McEachin</span>
+        <span class="timestamp"><%=comment.commentTime%></span>
+        <p class="comment"><%=comment.comment%></p>
+    </div>
+    <div id="clear"></div>
+</div>
+<% }) %>
